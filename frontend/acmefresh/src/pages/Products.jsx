@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   margin:auto;
   justify-content:center;
   height:100vh;
-  background-image:url("/assets/images.jpeg")};
+  background-image:url("/assets/images.jpeg");
 
 
 `
