@@ -20,7 +20,7 @@ export const authreducer=(state=initialState,action)=>{
             }
         case types.USER_LOGIN_SUCCESS:
             return{
-                ...state,isAuth:true,token:payload,isLoading:false
+                ...state,isAuth:true,details:payload,isLoading:false
             }
         case types.USER_LOGIN_FAILURE:
             return {

@@ -1,5 +1,7 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { addToCart } from '../redux/App/actions'
 
 const CardWrapper=styled.div`
     padding:0px 20px;
@@ -20,13 +22,18 @@ const CardWrapper=styled.div`
 `
 
 const ProductCard = (props) => {
+  const dispatch=useDispatch();
+  
+  const handleCart=()=>{
+    dispatch(addToCart(props.item))
+  }
   return (
     <CardWrapper>
         <img src={props.item.image}/>
         <h5>{props.item.title}</h5>
         <p>{props.item.desc}</p>
         <p>{props.item.price} Rs</p>
-        <button>Add to Cart</button>
+        <button onClick={handleCart}>Add to Cart</button>
     </CardWrapper>
   )
 }

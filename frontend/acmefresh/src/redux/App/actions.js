@@ -7,3 +7,7 @@ export const getproductdata=()=>(dispatch)=>{
     .then((res)=>dispatch({type:types.GET_PRODUCT_SUCCESS,payload:res.data}))
     .catch((err)=>dispatch({type:types.GET_PRODUCT_FAILURE}));
 }
+
+export const addToCart=(params)=>(dispatch)=>{
+    dispatch({type:types.ADD_TO_CART,payload:params});
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrap=styled.div`
@@ -33,7 +34,7 @@ const LeftButton = styled.div`
   background-color: #060080;
   height: 40px;
   width: 256px;
-  color: #F7A4A4;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +59,7 @@ const Section = ({ title,description,leftBtnText,rightBtnText,backgroundImg}) =>
           <p>{description}</p>
         </ItemText>
         <ButtonGroup>
-            <LeftButton>{leftBtnText}</LeftButton>
+        <Link to="/products"> <LeftButton>{leftBtnText}</LeftButton></Link>
             {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
         </ButtonGroup>
 

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import {AiOutlineMenu,AiOutlineClose} from 'react-icons/ai';
+import { useSelector } from 'react-redux';
 
 const Container = styled.div`
     min-height:60px;
@@ -82,15 +83,25 @@ const Close=styled(AiOutlineClose)`
 `
 
 const Navbar = () => {
+    const navigate=useNavigate();
     const links=[
                     {to:"/",title:"Home"},
                     {to:"/products",title:"Products"},
-                    {to:"/clients",title:"Clients"},
-                    {to:"/about",title:"About us"}
-                ]
-
+                    {to:"/cart",title:"Cart"},
+                    // {to:"/about",title:"About us"}
+                ];
+    
+    const cart=useSelector((state)=>{return state.appreducer.cart});
+    const isAuth=useSelector((state)=>{return state.authreducer.isAuth});
+    const details=useSelector((state)=>{return state.authreducer.details});
+    
     const [rMenuStatus,setRMenuStatus]=useState(false);
-
+                const gotosignup=()=>{
+                    navigate("/signup")
+                }
+                const gotologin=()=>{
+                    navigate("/login")
+                }
 
   return (
     <Container>
@@ -102,7 +113,13 @@ const Navbar = () => {
             ))}
         </Menu>
         <RightMenu>
-            <button>Signup/Login</button>
+            {isAuth ? <div>{details.username}</div>:
+            <div style={{"display":"flex"}}>
+                <button onClick={gotosignup}>Signup</button>
+                    <button onClick={gotologin}>Login</button>
+                    </div>}
+            
+            <p>CART:{cart.length}</p>
             <CustomMenu onClick={()=>setRMenuStatus(!rMenuStatus)}/>
         </RightMenu>
         <HamBurgerMenu show={rMenuStatus}>

@@ -22,6 +22,10 @@ export const appreducer=(state=initialState,action)=>{
             return {
                 ...state,isLoading:false,isError:true
             }
+        case types.ADD_TO_CART:
+            return {
+                ...state,cart:[...state.cart,payload]
+            }
         default:
             return state;
     }
