@@ -20,7 +20,7 @@ const Container = styled.div`
     text-transform:uppercase;
     padding:0px 10px;
     }
-    /* background-color:#B6E2A1; */
+    background-color:#B6E2A1;
 `
 
 const Menu = styled.div`
@@ -36,7 +36,7 @@ const Menu = styled.div`
         color:black;
     }
     p:hover{
-        /* background-color:#F7A4A4; */
+        background-color:#F7A4A4;
     }
     @media (max-width: 768px) {
     display: none;

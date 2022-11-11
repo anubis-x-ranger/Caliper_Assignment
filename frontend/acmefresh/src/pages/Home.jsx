@@ -10,23 +10,23 @@ const Home = () => {
   return (
     <Container>
       <Section
-        title="Purchase Plants"
-        description=""
-        backgroundImg=""
-        leftBtnText="Shop Now"
-        rightBtnText=""
+        title="AcmeFresh | Hydroponic Systems"
+        description="A website that makes purchase and installation  of  hydroponic systems online"
+        backgroundImg="hydro-1.jpg"
+        leftBtnText="Order Now"
+        rightBtnText="Learn More"
       />
       <Section
-        title="Purchase Plants"
-        description=""
-        backgroundImg=""
-        leftBtnText="Shop Now"
-        rightBtnText=""
+        title="Agriculture, Plant Science & Data"
+        description="Get advanced Equipments for cost effective prices"
+        backgroundImg="hydro-2.jpg"
+        leftBtnText="Order Now"
+        rightBtnText="Learn More"
       />
       <Section
-        title="Purchase Plants"
+        title="Purchase Hydroponic Plants, System and Accessories"
         description=""
-        backgroundImg=""
+        backgroundImg="images.jpeg"
         leftBtnText="Shop Now"
         rightBtnText=""
       />
