@@ -4,8 +4,8 @@ import * as dotenv from 'dotenv';
 import bodyParser from 'body-parser'
 //import all routes
 import authrouter from './routes/auth.js';
+import productrouter from './routes/products.js';
 // const cartRoute = require('./routes/cart')
-// const usersRoute = require('./routes/users')
 // const productsRoute = require('./routes/products')
 // const ordersRoute = require('./routes/orders')
 
@@ -20,6 +20,7 @@ mongoose.connect(process.env.MONGO_DB_URL)
 
 //API Routes
 app.use(bodyParser.json());
-app.use("/api/auth",authrouter)
+app.use("/api/auth",authrouter);
+app.use("/api/products",productrouter);
 
 app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
